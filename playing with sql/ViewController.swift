@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     let km_table = Table("km table")
     let entry_number = Expression<Int>("entry number")
     let km = Expression<Int>("Km")
-    let gas = Expression<Double>("gas")
+    let gas = Expression<Double>("Gas")
     
     override func viewDidLoad() {
         super.viewDidLoad()
