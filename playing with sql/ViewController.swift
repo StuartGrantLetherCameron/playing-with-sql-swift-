@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewController: UIViewController {
 
+    var database: Connection!
+    
+    let km_table = Table("km table")
+    let entry_number = Expression<Int>("entry number")
+    let km = Expression<Int>("Km")
+    let gas = Expression<Double>("gas")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        do{
+            let dirctery = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                       appropriateFor: nil, create: true)
+            let file_url = dirctery.appendingPathComponent("user").appendingPathExtension("sqlite3")
+            let database = try Connection(file_url.path)
+            self.database = database
+        }catch{
+            print(error)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func enter() {
     }
-
-
 }
 
