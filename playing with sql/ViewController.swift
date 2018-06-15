@@ -73,24 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print()
         print()
         
-        var entry_list = [Entry]()
-        let query = "SELECT * FROM km"
-        
-        if sqlite3_prepare(db, query, -1, &add, nil) != SQLITE_OK{
-            print("didnt prep")
-            return
-        }
-        
-        while(sqlite3_step(add) == SQLITE_ROW){
-            let entry = sqlite3_column_int(add, 0)
-            let km = sqlite3_column_int(add, 1)
-            let gas = sqlite3_column_double(add, 2)
-            
-            entry_list.append(Entry(entry: Int(entry), km: Int(km), gas: Double(gas)))
-            
-            print("entry: ", entry, " km: ", km , " gas: ", gas)
-        }
-        
+        Functions().get_all_from_table(db: db!)
         
     }
 
