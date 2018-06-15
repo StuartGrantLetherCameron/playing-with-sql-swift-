@@ -12,16 +12,12 @@ import SQLite3
 class ViewController: UIViewController, UITextFieldDelegate {
 
     
-    @IBOutlet weak var gas_input: UITextField!
-    @IBOutlet weak var km_input: UITextField!
     
     var db: OpaquePointer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.gas_input.delegate = self
-        self.km_input.delegate = self
+
         
         // Do any additional setup after loading the view, typically from a nib.
       
@@ -42,31 +38,62 @@ class ViewController: UIViewController, UITextFieldDelegate {
         debugPrint("everything worked !!!")
     }
     
+    @IBOutlet weak var km_input: UITextField!
+    @IBOutlet weak var gas_input: UITextField!
     
     
-    @IBAction func add_info() {
-        
+    
+    @IBAction func add_info(_ sender: Any) {
         var add: OpaquePointer?
         
         let add_query = "INSERT INTO km (km, gas) VALUES (?,?)"
         
         if sqlite3_prepare(db, add_query, -1, &add, nil) != SQLITE_OK{
             debugPrint("couldnt prep")
+            return
         }
         
         if sqlite3_bind_int(add, 1, Int32(km_input.text!)!) != SQLITE_OK{
             debugPrint("could bind km")
+            return
         }
         
         if sqlite3_bind_double(add, 2, Double(gas_input.text!)!) != SQLITE_OK{
             debugPrint("could bind gas")
+            return
         }
         
         if sqlite3_step(add) != SQLITE_DONE{
-            debugPrint("couldnt add")
+            print("couldnt added")
+            return
+        }else{
+            debugPrint("added")
         }
+        
+        print()
+        print()
+        
+        var entry_list = [Entry]()
+        let query = "SELECT * FROM km"
+        
+        if sqlite3_prepare(db, query, -1, &add, nil) != SQLITE_OK{
+            print("didnt prep")
+            return
+        }
+        
+        while(sqlite3_step(add) == SQLITE_ROW){
+            let entry = sqlite3_column_int(add, 0)
+            let km = sqlite3_column_int(add, 1)
+            let gas = sqlite3_column_double(add, 2)
+            
+            entry_list.append(Entry(entry: Int(entry), km: Int(km), gas: Double(gas)))
+            
+            print("entry: ", entry, " km: ", km , " gas: ", gas)
+        }
+        
+        
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
     }

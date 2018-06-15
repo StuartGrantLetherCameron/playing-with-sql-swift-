@@ -11,6 +11,7 @@
 		841CCBBD20D20983009B0E3E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841CCBAE20D20923009B0E3E /* SQLite.framework */; };
 		841CCBBE20D20983009B0E3E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 841CCBAE20D20923009B0E3E /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8439EA3C20CF3518005808CB /* gascan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8439EA3B20CF3518005808CB /* gascan.jpeg */; };
+		843BE8E820D3729D00E219A3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BE8E720D3729D00E219A3 /* Entry.swift */; };
 		84733C4A20CDDD3900198EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84733C4920CDDD3900198EDC /* AppDelegate.swift */; };
 		84733C4C20CDDD3900198EDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84733C4B20CDDD3900198EDC /* ViewController.swift */; };
 		84733C4F20CDDD3900198EDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84733C4D20CDDD3900198EDC /* Main.storyboard */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		841CCBA320D20922009B0E3E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		8439EA3B20CF3518005808CB /* gascan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gascan.jpeg; sourceTree = "<group>"; };
+		843BE8E720D3729D00E219A3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		84733C4620CDDD3900198EDC /* playing with sql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "playing with sql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84733C4920CDDD3900198EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84733C4B20CDDD3900198EDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				84733C5020CDDD3B00198EDC /* Assets.xcassets */,
 				84733C5220CDDD3B00198EDC /* LaunchScreen.storyboard */,
 				84733C5520CDDD3B00198EDC /* Info.plist */,
+				843BE8E720D3729D00E219A3 /* Entry.swift */,
 			);
 			path = "playing with sql";
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843BE8E820D3729D00E219A3 /* Entry.swift in Sources */,
 				84733C4C20CDDD3900198EDC /* ViewController.swift in Sources */,
 				84733C4A20CDDD3900198EDC /* AppDelegate.swift in Sources */,
 			);

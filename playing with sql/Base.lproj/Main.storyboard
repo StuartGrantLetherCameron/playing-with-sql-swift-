@@ -106,7 +106,7 @@
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="add_info:" destination="rNt-Gb-E1B" eventType="touchUpInside" id="Wx7-8R-ZuB"/>
+                                            <action selector="add_info:" destination="rNt-Gb-E1B" eventType="touchUpInside" id="qh5-f9-3D9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-Ex-ex2">
@@ -164,8 +164,8 @@
                         <viewLayoutGuide key="safeArea" id="7pw-bR-mOL"/>
                     </view>
                     <connections>
-                        <outlet property="gas_input" destination="TcM-qH-2Y6" id="Pip-fx-Nlt"/>
-                        <outlet property="km_input" destination="jSb-k7-Kt7" id="hsV-kr-5By"/>
+                        <outlet property="gas_input" destination="TcM-qH-2Y6" id="HXg-hd-fAg"/>
+                        <outlet property="km_input" destination="jSb-k7-Kt7" id="XvE-4j-kGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyd-yO-sYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
