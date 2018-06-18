@@ -18,28 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7j-9k-klK">
-                                <rect key="frame" x="158" y="318" width="59" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-Sq-c7c" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="38" y="55" width="299" height="228"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eyc-WG-4DQ"/>
-                                    <constraint firstAttribute="width" constant="59" id="irE-va-4TE"/>
+                                    <constraint firstAttribute="width" constant="299" id="X3K-3z-IIz"/>
+                                    <constraint firstAttribute="height" constant="228" id="xX0-Kl-20C"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLF-7v-h4a">
+                                <rect key="frame" x="158" y="602" width="59" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="H1U-nc-TCj"/>
+                                    <constraint firstAttribute="height" constant="30" id="eQi-Aw-4pF"/>
                                 </constraints>
                                 <state key="normal" title="Add Gas"/>
                                 <connections>
-                                    <segue destination="rNt-Gb-E1B" kind="presentation" id="dIn-xl-Vqe"/>
+                                    <segue destination="rNt-Gb-E1B" kind="presentation" id="YGL-5x-cDr"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="U7j-9k-klK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="298" id="2H6-eV-DMO"/>
-                            <constraint firstItem="U7j-9k-klK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5iS-Lf-cLL"/>
-                            <constraint firstItem="U7j-9k-klK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="298" id="CNr-Ox-QdQ"/>
-                            <constraint firstItem="U7j-9k-klK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIK-Zc-kdP"/>
-                            <constraint firstItem="U7j-9k-klK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zvi-n5-xJD"/>
+                            <constraint firstItem="aBP-Sq-c7c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="Xpt-ln-oQ3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QLF-7v-h4a" secondAttribute="bottom" constant="35" id="bA7-qR-cvw"/>
+                            <constraint firstItem="aBP-Sq-c7c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eAp-3X-O2j"/>
+                            <constraint firstItem="QLF-7v-h4a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zEx-Q7-Whj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="aBP-Sq-c7c" id="WsD-qm-lAj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,6 +117,7 @@
                                         </state>
                                         <connections>
                                             <action selector="add_info:" destination="rNt-Gb-E1B" eventType="touchUpInside" id="qh5-f9-3D9"/>
+                                            <action selector="enter_gas:" destination="rNt-Gb-E1B" eventType="touchUpInside" id="WfJ-q9-ysO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-Ex-ex2">
@@ -119,7 +130,7 @@
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="UuH-Vy-9ek"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="upu-Ij-zRG"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gascan.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="wBt-gZ-yDA">
